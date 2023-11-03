@@ -22,6 +22,8 @@
         display: flex;
         align-items: center;
 
+        margin-bottom: 100px;
+
         width: 1000px;
 
         border-bottom: 5px solid #fff;

@@ -1,5 +1,8 @@
 <script>
     import Search from "../lib/components/Search.svelte";
+    import DayCards from "../lib/components/DayCards.svelte";
+
+    let dataAvailable = true;
 </script>
 
 
@@ -10,11 +13,14 @@
 
 <div class="delta-weather-container">
     <Search/>
+    {#if dataAvailable}
+        <DayCards/>
+    {/if}
 </div>
 
 
 
-<style>
+<style lang="scss">
     :global(body){
         margin: 0;
         padding: 0;
@@ -28,6 +34,7 @@
 
     .delta-weather-container{
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
 

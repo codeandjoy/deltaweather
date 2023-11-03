@@ -19,6 +19,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@fontsource/lato": "^5.0.17",
 		"@fontsource/poppins": "^5.0.8"
 	}
 }
