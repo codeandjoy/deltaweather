@@ -6,9 +6,9 @@
 
 
 <div class="day-cards-container">
-    <DayCard/>
-    <DayCard/>
-    <DayCard/>
+    <DayCard isOpen={ false }/>
+    <DayCard isOpen={ false }/>
+    <DayCard isOpen={ false }/>
 </div>
 
 
