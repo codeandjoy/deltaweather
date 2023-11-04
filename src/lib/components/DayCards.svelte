@@ -6,7 +6,7 @@
 
 
 <div class="day-cards-container">
-    <DayCard isOpen={ false }/>
+    <DayCard isOpen={ true }/>
     <DayCard isOpen={ false }/>
     <DayCard isOpen={ false }/>
 </div>

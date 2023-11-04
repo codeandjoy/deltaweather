@@ -1,5 +1,7 @@
 <script>
     import DayCardClosed from "./DayCardClosed.svelte";
+    import DayCardOpen from "./DayCardOpen.svelte";
+    import FullPageFade from "./FullPageFade.svelte";
 
     export let isOpen;
     // export let dayData;
@@ -8,7 +10,8 @@
 
 
 {#if isOpen}
-    <div>Placeholder</div>
+    <DayCardOpen/>
+    <FullPageFade/>
 {:else}
     <DayCardClosed/>
 {/if}
