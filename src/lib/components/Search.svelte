@@ -1,10 +1,12 @@
 <script>
     import "@fontsource/poppins/700.css"
+    import queryCity from "../utils/processRequest";
 
     let searchData = "";
 
-    function querySearch(){
-        console.log(searchData);
+    async function search(){
+        const data = await queryCity(searchData);
+        console.log(data);
     }
 </script>
 
@@ -12,7 +14,7 @@
 
 <div class="city-search">
     <input class="search-inp" type="text" placeholder="City:" bind:value={searchData}/>
-    <button class="search-btn" on:click={ querySearch }></button>
+    <button class="search-btn" on:click={ search }></button>
 </div>
 
 
