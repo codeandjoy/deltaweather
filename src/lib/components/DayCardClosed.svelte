@@ -92,7 +92,7 @@
                     width: 200px;
                     height: 200px;
                 
-                    background-image: url('/icons/sun.svg');
+                    background-image: url('/icons/weather_icons/sun.svg');
                     background-position: center;
                     background-size: contain;
                     background-repeat: no-repeat;
