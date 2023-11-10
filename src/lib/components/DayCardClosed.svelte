@@ -64,7 +64,7 @@
             width: 400px;
             height: 400px;
 
-            background-image: url('/icons/sun_white.svg');
+            background-image: url('/icons/weather_icons/sun_white.svg');
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
