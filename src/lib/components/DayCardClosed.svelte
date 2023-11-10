@@ -5,13 +5,17 @@
 
 
 <div class="day-card">
-    <div class="weather-img"></div>
-    <div class="weather-img-art"></div>
+    <div class="day-card-art"></div>
+
+    <div class="weather-img-container">
+        <div class="weather-img"></div>
+        <div class="weather-desc"><span>Sun</span></div>
+    </div>
+    
     <div class="date-container">
         <span class="card-day">Mon</span>
         <span class="card-date">03-12-2023</span>
     </div>
-    <div class="weather-desc"><span>Sun</span></div>
     <div class="weather-temp">
         <span class="temp-value">2</span>
         <span class="temp-unit">°C</span>
@@ -36,6 +40,8 @@
 
 <style lang="scss">
     .day-card{
+        position: relative;
+
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -48,21 +54,7 @@
         background-color: #000;
         border-radius: 20px;
 
-        .weather-img,
-        .weather-img-art{
-            background-image: url('/icons/sun.svg');
-            background-position: center;
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
-
-        .weather-img{
-            margin-bottom: 10px;
-
-            width: 200px;
-            height: 200px;
-        }
-        .weather-img-art{
+        .day-card-art{
             position: absolute;
             bottom: 0;
 
@@ -71,37 +63,61 @@
             width: 400px;
             height: 400px;
         }
-        
+
+        .weather-img-container{
+            position: relative;
+
+            margin-top: -30px;
+
+            .weather-img{
+                width: 200px;
+                height: 200px;
+            
+                background-image: url('/icons/sun.svg');
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+
+                opacity: .1;
+            }
+
+            .weather-desc{
+                position: absolute;
+                top: 49%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                font-size: 50px;
+                font-weight: bold;
+
+                color: #FFD23F;
+            }
+        }
+
         .date-container{
             display: flex;
             flex-direction: column;
             align-items: center;
 
+            margin-top: -50px;
+            margin-bottom: 5px;
+
+            
             .card-day{
                 font-size: 24px;
                 font-weight: bold;
-                color: #6a6a6a;
+                color: #828282;
             }
             .card-date{
-                font-size: 12px;
+                font-size: 14px;
                 font-weight: bold;
-                color: #272727;
+                color: #3f3f3f;
             }
         }
-
-        .weather-desc{
-            margin-top: -10px;
-
-            font-size: 50px;
-            font-weight: bold;
-
-            color: #FFD23F;
-            opacity: .1;
-        }
+        
         .weather-temp{
             position: relative;
 
-            margin-top: -44px;
             margin-bottom: 8px;
 
             color: #fff;
