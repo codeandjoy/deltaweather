@@ -29,7 +29,10 @@
             </div>
         </div>
         <div class="data-col">
-            <div class="weather-icon"></div>
+            <div class="weather-icon-container">
+                <div class="weather-icon"></div>
+                <div class="weather-desc">Sun</div>
+            </div>
             <div class="time"><span>0:00 am</span></div>
             <div class="temperature"><span class="value">0</span><span class="unit">°C</span></div>
             <div class="whp-values">
@@ -39,7 +42,10 @@
             </div>
         </div>
         <div class="data-col">
-            <div class="weather-icon"></div>
+            <div class="weather-icon-container">
+                <div class="weather-icon"></div>
+                <div class="weather-desc">Sun</div>
+            </div>
             <div class="time"><span>0:00 am</span></div>
             <div class="temperature"><span class="value">0</span><span class="unit">°C</span></div>
             <div class="whp-values">
@@ -49,7 +55,10 @@
             </div>
         </div>
         <div class="data-col">
-            <div class="weather-icon"></div>
+            <div class="weather-icon-container">
+                <div class="weather-icon"></div>
+                <div class="weather-desc">Sun</div>
+            </div>
             <div class="time"><span>0:00 am</span></div>
             <div class="temperature"><span class="value">0</span><span class="unit">°C</span></div>
             <div class="whp-values">
@@ -59,7 +68,10 @@
             </div>
         </div>
         <div class="data-col">
-            <div class="weather-icon"></div>
+            <div class="weather-icon-container">
+                <div class="weather-icon"></div>
+                <div class="weather-desc">Sun</div>
+            </div>
             <div class="time"><span>0:00 am</span></div>
             <div class="temperature"><span class="value">0</span><span class="unit">°C</span></div>
             <div class="whp-values">
@@ -69,7 +81,10 @@
             </div>
         </div>
         <div class="data-col">
-            <div class="weather-icon"></div>
+            <div class="weather-icon-container">
+                <div class="weather-icon"></div>
+                <div class="weather-desc">Sun</div>
+            </div>
             <div class="time"><span>0:00 am</span></div>
             <div class="temperature"><span class="value">0</span><span class="unit">°C</span></div>
             <div class="whp-values">
@@ -79,7 +94,10 @@
             </div>
         </div>
         <div class="data-col">
-            <div class="weather-icon"></div>
+            <div class="weather-icon-container">
+                <div class="weather-icon"></div>
+                <div class="weather-desc">Sun</div>
+            </div>
             <div class="time"><span>0:00 am</span></div>
             <div class="temperature"><span class="value">0</span><span class="unit">°C</span></div>
             <div class="whp-values">
@@ -89,7 +107,10 @@
             </div>
         </div>
         <div class="data-col">
-            <div class="weather-icon"></div>
+            <div class="weather-icon-container">
+                <div class="weather-icon"></div>
+                <div class="weather-desc">Sun</div>
+            </div>
             <div class="time"><span>0:00 am</span></div>
             <div class="temperature"><span class="value">0</span><span class="unit">°C</span></div>
             <div class="whp-values">
@@ -99,7 +120,10 @@
             </div>
         </div>
         <div class="data-col">
-            <div class="weather-icon"></div>
+            <div class="weather-icon-container">
+                <div class="weather-icon"></div>
+                <div class="weather-desc">Sun</div>
+            </div>
             <div class="time"><span>0:00 am</span></div>
             <div class="temperature"><span class="value">0</span><span class="unit">°C</span></div>
             <div class="whp-values">
@@ -121,8 +145,8 @@
         transform: translate(-50%, -50%);
         z-index: 3;
 
-        padding: 50px;
-        padding-right: 60px;
+        padding: 60px 80px;
+        padding-right: 90px;
 
         background-color: #000;
 
@@ -130,39 +154,42 @@
 
         .day-card-open--header{
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             justify-content: space-between;
 
-            margin-bottom: 20px;
+            margin-bottom: 40px;
 
             .location{
-                display: flex;
-                flex-direction: column;
-                
+                position: relative;
+
                 font-family: 'Poppins', sans-serif;
 
                 .city{
                     margin-top: -60px;
+                    margin-bottom: -80px;
                     margin-left: -10px;
 
                     span{
                         font-size: 200px;
                         font-weight: normal;
-                        color: #3F3F3F;
+                        color: #121212  ;
                     }
                 }
                 .daydate{
-                    margin-top: -70px;
+                    position: absolute;
+                    bottom: 0;
+
+                    margin-bottom: -41px;
 
                     .day{
                         margin-right: 10px;
 
-                        font-size: 50px;
-                        color: #2d2d2d;
+                        font-size: 100px;
+                        color: #AAAAAA;
                     }
                     .date{
-                        font-size: 24px;
-                        color: #2b2b2b;
+                        font-size: 30px;
+                        color: #6F6F6F;
                     }
                 }
             }
@@ -172,8 +199,10 @@
                 justify-content: center;
                 gap: 10px;
 
+                margin-bottom: -6px;
+
                 font-family: 'Lato', sans-serif;
-                font-size: 36px;
+                font-size: 30px;
                 font-weight: bold;
 
                 color: #2b2b2b;
@@ -187,6 +216,8 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-end;
+
+                margin-right: 5px;
 
                 .data--icons{
                     display: flex;
@@ -215,22 +246,38 @@
                 font-family: 'Lato', sans-serif;
                 font-weight: bold;
 
-                .weather-icon{
-                    width: 100px;
-                    height: 100px;
-                    
-                    margin-bottom: 16px;
+                .weather-icon-container{
+                    position: relative; 
 
-                    background-image: url('/icons/sun.svg');
-                    background-size: contain;
-                    background-position: center;
-                    background-repeat: no-repeat;
+                    margin-bottom: -8px;
+                    
+                    .weather-icon{
+                        width: 100px;
+                        height: 100px;
+    
+                        background-image: url('/icons/sun.svg');
+                        background-size: contain;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        opacity: .1;
+                    }
+                    .weather-desc{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+
+                        color: #FFD23F;
+
+                        font-size: 40px;
+                        font-weight: bold;
+                    }
                 }
 
                 .time{
                     font-size: 14pt;
                     font-weight: bold;
-                    color: #2b2b2b;
+                    color: #393939;
                 }
 
                 .temperature{
