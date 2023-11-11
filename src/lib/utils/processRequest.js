@@ -33,10 +33,21 @@ const queryCity = async (city) => {
     for(const [key, value] of Object.entries(cleanData)){
         cleanData[key] = splitInto(8, value);
     }
+
+    // Shape data by days
+    const shapedData = [];
+    for(let i = 0; i < cleanData.time.length; i++){
+        const dayData = {};
+        for(const [key, value] of Object.entries(cleanData)){
+            dayData[key] = value[i];
+        }
+        
+        shapedData.push(dayData);
+    }
     
     // 
     
-    return cleanData;
+    return shapedData;
 }
 
 export default queryCity;
