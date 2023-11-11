@@ -4,10 +4,13 @@ import { getEvery, splitInto } from "./arr";
 
 
 const queryCity = async (city) => {
-    const cityData = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1&language=en&format=json`).then(r => r.json());
-    const cityWeatherData = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${cityData.results[0].latitude}&longitude=${cityData.results[0].longitude}&timezone=${cityData.results[0].timezone}&hourly=temperature_2m,relative_humidity_2m,weather_code,surface_pressure,wind_speed_10m&forecast_days=3`).then(r => r.json());
+    let cityData = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1&language=en&format=json`).then(r => r.json());
+    let cityWeatherData = null;
+    if(cityData.results){
+        cityWeatherData = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${cityData.results[0].latitude}&longitude=${cityData.results[0].longitude}&timezone=${cityData.results[0].timezone}&hourly=temperature_2m,relative_humidity_2m,weather_code,surface_pressure,wind_speed_10m&forecast_days=3`).then(r => r.json());
+    }
 
-    console.log(cityWeatherData);
+    if(!cityWeatherData) return undefined;
 
     // Process data
 

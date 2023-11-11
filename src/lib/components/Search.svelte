@@ -1,19 +1,34 @@
 <script>
     import "@fontsource/poppins/700.css"
+    import { appState, query, weatherData } from "./store";
     import queryCity from "../utils/processRequest";
 
-    let searchData = "";
+    let citySearchValue = "";
 
     async function search(){
-        const data = await queryCity(searchData);
+        $appState = "loading";
+
+        const data = await queryCity(citySearchValue);
+
+        if(data !== undefined){
+            $query = citySearchValue;
+            $weatherData = data;
+            $appState = "success";
+        }
+        else{
+            $appState = "error";
+        }
+
         console.log(data);
     }
+
+    let isFocused = false;
 </script>
 
 
 
-<div class="city-search">
-    <input class="search-inp" type="text" placeholder="City:" bind:value={searchData}/>
+<div class={"city-search" + ( isFocused?" city-search-focused":"") }>
+    <input class="search-inp" type="text" placeholder="City:" bind:value={ citySearchValue } on:focus={() => isFocused = true} on:blur={() => isFocused = false}/> 
     <button class="search-btn" on:click={ search }></button>
 </div>
 
@@ -28,17 +43,18 @@
 
         width: 1000px;
 
-        border-bottom: 5px solid #fff;
+        border-bottom: 5px solid #3F3F3F;
         
         .search-inp{
             width: 100%;
             
             font-family: 'Poppins', sans-serif;
+            font-weight: bold;
             font-size: 100px;
 
             text-align: center;
 
-            color: #fff;
+            color: #3F3F3F;
             background-color: transparent;
             border: none;
             outline: none;
@@ -48,10 +64,21 @@
             width: 50px;
             height: 50px;
     
-            background-image: url('/icons/search.svg');
+            background-image: url('/icons/search_grey.svg');
     
             background-color: transparent;
             border: none;
+        }
+    }
+    .city-search-focused{
+        border-bottom: 5px solid #fff;
+
+        .search-inp{
+            color: #fff;
+        }
+
+        .search-btn{
+            background-image: url('/icons/search.svg');
         }
     }    
 </style>
