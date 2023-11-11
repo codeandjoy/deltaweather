@@ -1,22 +1,22 @@
 <script>
     import "@fontsource/poppins/700.css"
-    import { appState, query, weatherData } from "./store";
+    import { appState_store, query_store, weatherData_store } from "./store";
     import queryCity from "../utils/processRequest";
 
     let citySearchValue = "";
 
     async function search(){
-        $appState = "loading";
+        $appState_store = "loading";
 
         const data = await queryCity(citySearchValue);
 
         if(data !== undefined){
-            $query = citySearchValue;
-            $weatherData = data;
-            $appState = "success";
+            $query_store = citySearchValue;
+            $weatherData_store = data;
+            $appState_store = "success";
         }
         else{
-            $appState = "error";
+            $appState_store = "error";
         }
 
         console.log(data);

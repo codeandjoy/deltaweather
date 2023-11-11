@@ -1,8 +1,8 @@
 <script>
     import DayCard from "./DayCard.svelte";
-    import { appState } from "./store";
+    import { appState_store } from "./store";
 
-    $: _appState = $appState;
+    $: _appState = $appState_store;
 </script>
 
 

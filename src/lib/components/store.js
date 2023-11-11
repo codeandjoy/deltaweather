@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store';
 
-export const query = writable(null);
-export const weatherData = writable(null);
-export const appState = writable("idle"); // idle / loading / success / error
+export const query_store = writable(null);
+export const weatherData_store = writable(null);
+export const appState_store = writable("idle"); // idle / loading / success / error
