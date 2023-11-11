@@ -15,7 +15,7 @@
 {:else if _appState === "loading"}
     <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
 {:else if _appState === "error"}
-    error
+    <div class="error-msg"><span>Something went wrong :(</span></div>
 {/if}
 
 <style lang="scss">
@@ -57,6 +57,14 @@
         }
         100% {
             transform: rotate(360deg);
+        }
+    }
+
+    .error-msg{
+        color: #FF3F3F;
+
+        span{
+            font-size: 18px;
         }
     }
 
