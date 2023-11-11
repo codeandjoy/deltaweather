@@ -2,19 +2,19 @@
     import DayCard from "./DayCard.svelte";
     import { appState_store } from "./store";
 
-    $: _appState = $appState_store;
+    $: appState = $appState_store;
 </script>
 
 
-{#if _appState === "success"}
+{#if appState === "success"}
     <div class="day-cards-container">
         <DayCard isOpen={ false }/>
         <DayCard isOpen={ false }/>
         <DayCard isOpen={ false }/>
     </div>
-{:else if _appState === "loading"}
+{:else if appState === "loading"}
     <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-{:else if _appState === "error"}
+{:else if appState === "error"}
     <div class="error-msg"><span>Something went wrong :(</span></div>
 {/if}
 
