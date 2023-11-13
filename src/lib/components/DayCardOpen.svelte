@@ -40,7 +40,7 @@
                 <div class="whp-values">
                     <div class="wind"><span>{ dayData.wind[i] } km/h</span></div>
                     <div class="humidity"><span>{ dayData.humidity[i] } %</span></div>
-                    <div class="pressure"><span>{ dayData.pressure[i] } mb</span></div>
+                    <div class="pressure"><span>{ dayData.pressure[i] } hPa</span></div>
                 </div>
             </div>
         {/each}

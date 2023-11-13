@@ -10,7 +10,7 @@
 {#if appState === "success"}
     <div class="day-cards-container">
         {#each weatherData as dayData }
-            <DayCard dayData={ dayData } isOpen={ true }/>
+            <DayCard dayData={ dayData } isOpen={ false }/>
         {/each}
     </div>
 {:else if appState === "loading"}

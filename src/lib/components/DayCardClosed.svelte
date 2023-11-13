@@ -34,7 +34,7 @@
             </div>
             <div class="extra-data">
                 <div class="extra-data--icon extra-data--icon-pressure"></div>
-                <div class="extra-data--value">{ dayData.pressure[4] } mb</div>
+                <div class="extra-data--value">{ dayData.pressure[4] } hPa</div>
             </div>
         </div>
     </div>
