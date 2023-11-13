@@ -4,7 +4,6 @@
     import { query_store } from './store';
 
     export let dayData;
-    export let onClick;
 </script>
 
 
