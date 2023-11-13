@@ -1,18 +1,31 @@
 <script>
     export let dayData;
-    export let isOpen;
 
     import DayCardClosed from "./DayCardClosed.svelte";
     import DayCardOpen from "./DayCardOpen.svelte";
     import FullPageFade from "./FullPageFade.svelte";
 
+    let isOpen = false;
 </script>
 
 
 
 {#if isOpen}
-    <DayCardOpen dayData={ dayData }/>
-    <FullPageFade/>
+    <button class="wrapper-button" on:click={() => isOpen = false}>
+        <DayCardOpen dayData={ dayData }/>
+    </button>
+    <button class="wrapper-button" on:click={() => isOpen = false}>
+        <FullPageFade/>
+    </button>
 {:else}
-    <DayCardClosed dayData={ dayData }/>
+    <button class="wrapper-button" on:click={() => isOpen = true}>
+        <DayCardClosed dayData={ dayData }/>
+    </button>
 {/if}
+
+<style>
+    .wrapper-button{
+        background-color: transparent;
+        border: none;
+    }
+</style>

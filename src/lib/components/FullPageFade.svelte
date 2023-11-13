@@ -15,6 +15,6 @@
         height: 100vh;
 
         background-color: #000;
-        opacity: .1;
+        opacity: .2;
     }
 </style>
