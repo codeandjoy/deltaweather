@@ -3,7 +3,7 @@
     import { appState_store, query_store, weatherData_store } from "./store";
     import queryCity from "../utils/processRequest";
 
-    let citySearchValue = "";
+    let citySearchValue = $query_store || "";
 
     async function search(){
         $appState_store = "loading";
