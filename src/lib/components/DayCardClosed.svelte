@@ -145,6 +145,7 @@
                 position: relative;
     
                 margin-bottom: 8px;
+                margin-right: 16px;
     
                 color: #fff;
     
@@ -155,7 +156,7 @@
                 .temp-unit{
                     position: absolute;
                     top: 12px;
-                    right: -17px;
+                    right: -20px;
                     font-size: 16px;
                 }
             }
