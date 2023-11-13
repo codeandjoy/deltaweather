@@ -1,7 +1,9 @@
 <script>
+    import { anyCardOpen_store } from "../lib/components/store";
     import Search from "../lib/components/Search.svelte";
     import DayCards from "../lib/components/DayCards.svelte";
 
+    $: anyCardOpen = $anyCardOpen_store;
     let dataAvailable = true;
 </script>
 
@@ -12,7 +14,9 @@
 </svelte:head>
 
 <div class="delta-weather-container">
-    <Search/>
+    {#if !anyCardOpen}
+        <Search/>
+    {/if}
     {#if dataAvailable}
         <DayCards/>
     {/if}

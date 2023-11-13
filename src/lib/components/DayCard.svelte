@@ -1,6 +1,7 @@
 <script>
     export let dayData;
 
+    import { anyCardOpen_store } from "./store";
     import DayCardClosed from "./DayCardClosed.svelte";
     import DayCardOpen from "./DayCardOpen.svelte";
     import FullPageFade from "./FullPageFade.svelte";
@@ -11,14 +12,14 @@
 
 
 {#if isOpen}
-    <button class="wrapper-button" on:click={() => isOpen = false}>
+    <button class="wrapper-button" on:click={() => {isOpen = false ; $anyCardOpen_store = false}}>
         <DayCardOpen dayData={ dayData }/>
     </button>
-    <button class="wrapper-button" on:click={() => isOpen = false}>
+    <button class="wrapper-button" on:click={() => {isOpen = false ; $anyCardOpen_store = false}}>
         <FullPageFade/>
     </button>
 {:else}
-    <button class="wrapper-button" on:click={() => isOpen = true}>
+    <button class="wrapper-button" on:click={() => {isOpen = true ; $anyCardOpen_store = true}}>
         <DayCardClosed dayData={ dayData }/>
     </button>
 {/if}
