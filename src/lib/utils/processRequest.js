@@ -34,7 +34,20 @@ const queryCity = async (city) => {
         cleanData[key] = splitInto(8, value);
     }
 
-    // Shape data by days
+    // Pick day / night data
+    cleanData.wmo = cleanData.wmo.map(wmoDay => {
+        return wmoDay.map((wmoHour, idx) => {
+            // 2 last hours are 'night'
+            return {
+                name: wmoHour.name,
+                color: idx > 5 ? wmoHour.color.night : wmoHour.color.day,
+                icon: idx > 5 ? wmoHour.icon.night : wmoHour.icon.day,
+
+            }
+        });
+    });
+
+    // Shape data into array by day
     const shapedData = [];
     for(let i = 0; i < cleanData.time.length; i++){
         const dayData = {};

@@ -5,12 +5,12 @@
 
 
 <div class="day-card">
-    <div class="day-card-art" style="background-image: url('/icons/weather_icons/{ dayData.wmo[4].icon.day }_white.svg');"></div>
+    <div class="day-card-art" style="background-image: url('/icons/weather_icons/{ dayData.wmo[4].icon }_white.svg');"></div>
 
     <div class="day-card-content-container">
         <div class="weather-img-container">
-            <div class="weather-img" style="background-image: url('/icons/weather_icons/{ dayData.wmo[4].icon.day }.svg');"></div>
-            <div class="weather-desc" style="color: { dayData.wmo[4].color.day }">
+            <div class="weather-img" style="background-image: url('/icons/weather_icons/{ dayData.wmo[4].icon  }.svg');"></div>
+            <div class="weather-desc" style="color: { dayData.wmo[4].color  }">
                 <span>{ dayData.wmo[4].name }</span>
             </div>
         </div>

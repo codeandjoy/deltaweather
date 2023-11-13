@@ -1,6 +1,7 @@
 <script>
     import '@fontsource/poppins'
     import '@fontsource/lato'
+    import { query_store } from './store';
 
     export let dayData;
 </script>
@@ -10,8 +11,8 @@
 <div class="day-card-open">
     <div class="day-card-open--header">
         <div class="location">
-            <div class="city"><span>London</span></div>
-            <div class="daydate"><span class="day">Mon</span><span class="date">03-12-2023</span></div>
+            <div class="city"><span>{ $query_store }</span></div>
+            <div class="daydate"><span class="day">{ dayData.time[0].weekday }</span><span class="date">{ dayData.time[0].date }</span></div>
         </div>
         <div class="units">
             <div class="unit--temp"><span>°C</span></div>
@@ -28,110 +29,21 @@
                 <div class="data--icon icon-pressure"></div>
             </div>
         </div>
-        <div class="data-col">
-            <div class="weather-icon-container">
-                <div class="weather-icon"></div>
-                <div class="weather-desc">Sun</div>
+        {#each { length: 8 } as _, i}
+            <div class="data-col">
+                <div class="weather-icon-container">
+                    <div class="weather-icon" style="background-image: url('/icons/weather_icons/{dayData.wmo[i].icon}.svg');"></div>
+                    <div class="weather-desc">{ dayData.wmo[i].name }</div>
+                </div>
+                <div class="time"><span>{ dayData.time[i].time }</span></div>
+                <div class="temperature"><span class="value">{ dayData.temperature[i] }</span><span class="unit">°C</span></div>
+                <div class="whp-values">
+                    <div class="wind"><span>{ dayData.wind[i] } km/h</span></div>
+                    <div class="humidity"><span>{ dayData.humidity[i] } %</span></div>
+                    <div class="pressure"><span>{ dayData.pressure[i] } mb</span></div>
+                </div>
             </div>
-            <div class="time"><span>0:00 am</span></div>
-            <div class="temperature"><span class="value">0</span><span class="unit">°C</span></div>
-            <div class="whp-values">
-                <div class="wind"><span>3.1 km/h</span></div>
-                <div class="humidity"><span>40%</span></div>
-                <div class="pressure"><span>1000 mb</span></div>
-            </div>
-        </div>
-        <div class="data-col">
-            <div class="weather-icon-container">
-                <div class="weather-icon"></div>
-                <div class="weather-desc">Sun</div>
-            </div>
-            <div class="time"><span>0:00 am</span></div>
-            <div class="temperature"><span class="value">0</span><span class="unit">°C</span></div>
-            <div class="whp-values">
-                <div class="wind"><span>3.1 km/h</span></div>
-                <div class="humidity"><span>40%</span></div>
-                <div class="pressure"><span>1000 mb</span></div>
-            </div>
-        </div>
-        <div class="data-col">
-            <div class="weather-icon-container">
-                <div class="weather-icon"></div>
-                <div class="weather-desc">Sun</div>
-            </div>
-            <div class="time"><span>0:00 am</span></div>
-            <div class="temperature"><span class="value">0</span><span class="unit">°C</span></div>
-            <div class="whp-values">
-                <div class="wind"><span>3.1 km/h</span></div>
-                <div class="humidity"><span>40%</span></div>
-                <div class="pressure"><span>1000 mb</span></div>
-            </div>
-        </div>
-        <div class="data-col">
-            <div class="weather-icon-container">
-                <div class="weather-icon"></div>
-                <div class="weather-desc">Sun</div>
-            </div>
-            <div class="time"><span>0:00 am</span></div>
-            <div class="temperature"><span class="value">0</span><span class="unit">°C</span></div>
-            <div class="whp-values">
-                <div class="wind"><span>3.1 km/h</span></div>
-                <div class="humidity"><span>40%</span></div>
-                <div class="pressure"><span>1000 mb</span></div>
-            </div>
-        </div>
-        <div class="data-col">
-            <div class="weather-icon-container">
-                <div class="weather-icon"></div>
-                <div class="weather-desc">Sun</div>
-            </div>
-            <div class="time"><span>0:00 am</span></div>
-            <div class="temperature"><span class="value">0</span><span class="unit">°C</span></div>
-            <div class="whp-values">
-                <div class="wind"><span>3.1 km/h</span></div>
-                <div class="humidity"><span>40%</span></div>
-                <div class="pressure"><span>1000 mb</span></div>
-            </div>
-        </div>
-        <div class="data-col">
-            <div class="weather-icon-container">
-                <div class="weather-icon"></div>
-                <div class="weather-desc">Sun</div>
-            </div>
-            <div class="time"><span>0:00 am</span></div>
-            <div class="temperature"><span class="value">0</span><span class="unit">°C</span></div>
-            <div class="whp-values">
-                <div class="wind"><span>3.1 km/h</span></div>
-                <div class="humidity"><span>40%</span></div>
-                <div class="pressure"><span>1000 mb</span></div>
-            </div>
-        </div>
-        <div class="data-col">
-            <div class="weather-icon-container">
-                <div class="weather-icon"></div>
-                <div class="weather-desc">Sun</div>
-            </div>
-            <div class="time"><span>0:00 am</span></div>
-            <div class="temperature"><span class="value">0</span><span class="unit">°C</span></div>
-            <div class="whp-values">
-                <div class="wind"><span>3.1 km/h</span></div>
-                <div class="humidity"><span>40%</span></div>
-                <div class="pressure"><span>1000 mb</span></div>
-            </div>
-        </div>
-        <div class="data-col">
-            <div class="weather-icon-container">
-                <div class="weather-icon"></div>
-                <div class="weather-desc">Sun</div>
-            </div>
-            <div class="time"><span>0:00 am</span></div>
-            <div class="temperature"><span class="value">0</span><span class="unit">°C</span></div>
-            <div class="whp-values">
-                <div class="wind"><span>3.1 km/h</span></div>
-                <div class="humidity"><span>40%</span></div>
-                <div class="pressure"><span>1000 mb</span></div>
-            </div>
-        </div>
+        {/each}
     </div>
 </div>
 
