@@ -18,8 +18,6 @@
         else{
             $appState_store = "error";
         }
-
-        console.log(data);
     }
 
     let isFocused = false;

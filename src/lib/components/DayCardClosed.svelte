@@ -1,6 +1,5 @@
 <script>
     export let dayData;
-    console.log(dayData);
 </script>
 
 
