@@ -99,7 +99,7 @@
                     background-size: contain;
                     background-repeat: no-repeat;
     
-                    opacity: .1;
+                    opacity: .2;
                 }
     
                 .weather-desc{
@@ -107,13 +107,19 @@
                     top: 49%;
                     left: 50%;
                     transform: translate(-50%, -50%);
-    
-                    font-size: 50px;
+                    
+                    width: 100%;
+                    text-align: center;
+
+                    font-size: 34px;
                     font-weight: bold;
                 }
             }
     
             .date-container{
+                position: relative;
+                z-index: 2;
+
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -125,7 +131,7 @@
                 .card-day{
                     font-size: 24px;
                     font-weight: bold;
-                    color: #828282;
+                    color: #fff;
                 }
                 .card-date{
                     font-size: 14px;
@@ -178,7 +184,7 @@
                         background-position: center;
                     }
                     .extra-data--value{
-                        font-weight: bold;
+                        font-weight: normal;
                     }
     
                     .extra-data--icon-wind{ background-image: url('/icons/wind.svg'); }

@@ -14,11 +14,6 @@
             <div class="city"><span>{ $query_store }</span></div>
             <div class="daydate"><span class="day">{ dayData.time[0].weekday }</span><span class="date">{ dayData.time[0].date }</span></div>
         </div>
-        <div class="units">
-            <div class="unit--temp"><span>°C</span></div>
-            <div class="unit--wind"><span>km/h</span></div>
-            <div class="unit--pressure"><span>mb</span></div>
-        </div>
     </div>
 
     <div class="day-card-open--data">
@@ -33,7 +28,7 @@
             <div class="data-col">
                 <div class="weather-icon-container">
                     <div class="weather-icon" style="background-image: url('/icons/weather_icons/{dayData.wmo[i].icon}.svg');"></div>
-                    <div class="weather-desc">{ dayData.wmo[i].name }</div>
+                    <div class="weather-desc" style="color: { dayData.wmo[i].color }">{ dayData.wmo[i].name }</div>
                 </div>
                 <div class="time"><span>{ dayData.time[i].time }</span></div>
                 <div class="temperature"><span class="value">{ dayData.temperature[i] }</span><span class="unit">°C</span></div>
@@ -66,30 +61,34 @@
 
         .day-card-open--header{
             display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
+            align-items: center;
+            justify-content: center;
 
             margin-bottom: 40px;
 
             .location{
                 position: relative;
+                width: 100%;
 
                 font-family: 'Poppins', sans-serif;
 
                 .city{
                     margin-top: -60px;
                     margin-bottom: -80px;
-                    margin-left: -10px;
+
+                    text-align: center;
 
                     span{
                         font-size: 200px;
                         font-weight: normal;
-                        color: #121212  ;
+                        color: #121212;
                     }
                 }
                 .daydate{
                     position: absolute;
                     bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
 
                     margin-bottom: -41px;
 
@@ -105,31 +104,18 @@
                     }
                 }
             }
-            .units{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                gap: 10px;
-
-                margin-bottom: -6px;
-
-                font-family: 'Lato', sans-serif;
-                font-size: 30px;
-                font-weight: bold;
-
-                color: #2b2b2b;
-            }
         }
 
         .day-card-open--data{
             display: flex;
+            gap: 10px;
             
             .icons-col{
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-end;
 
-                margin-right: 5px;
+                margin-right: 20px;
 
                 .data--icons{
                     display: flex;
@@ -171,7 +157,7 @@
                         background-size: contain;
                         background-position: center;
                         background-repeat: no-repeat;
-                        opacity: .1;
+                        opacity: .2;
                     }
                     .weather-desc{
                         position: absolute;
@@ -179,17 +165,20 @@
                         left: 50%;
                         transform: translate(-50%, -50%);
 
+                        width: 100%;
+                        text-align: center;
+
                         color: #FFD23F;
 
-                        font-size: 40px;
+                        font-size: 20px;
                         font-weight: bold;
                     }
                 }
 
                 .time{
                     font-size: 14pt;
-                    font-weight: bold;
-                    color: #393939;
+                    font-weight: normal;
+                    color: #fff;
                 }
 
                 .temperature{
@@ -198,15 +187,17 @@
                     margin-top: 5px;
                     margin-bottom: 10px;
 
+                    margin-right: 16px;
+
                     color: #fff;
 
                     .value{
-                        font-size: 60px;
+                        font-size: 30px;
                     }
                     .unit{
                         position: absolute;
-                        top: 16px;
-                        right: -18px;
+                        top: 4px;
+                        right: -20px;
                         font-size: 16px;
                     }
                 }
@@ -217,6 +208,7 @@
                     gap: 16px;
 
                     font-size: 18px;
+                    font-weight: normal;
                     color: #acacac;
                 }
             }
