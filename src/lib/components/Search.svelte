@@ -65,6 +65,7 @@
             height: 50px;
     
             background-image: url('/icons/search_grey.svg');
+            background-size: contain;
     
             background-color: transparent;
             border: none;
@@ -80,5 +81,24 @@
         .search-btn{
             background-image: url('/icons/search.svg');
         }
-    }    
+    }
+    @media (max-width: 1100px){
+        .city-search{
+            width: 100%;
+            margin-bottom: 50px;
+
+            .search-inp{
+                font-size: 60px;
+            }
+            .search-btn{
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+    @media (max-width: 500px){
+        .city-search{
+            margin-bottom: 20px;
+        }
+    }
 </style>

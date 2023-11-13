@@ -45,4 +45,16 @@
         width: 100%;
         height: 100vh;
     }
+    @media (max-width: 1100px){
+        .delta-weather-container{
+            padding: 50px;
+            justify-content: flex-start;
+            box-sizing: border-box;
+        }
+    }
+    @media (max-width: 500px){
+        .delta-weather-container{
+            padding: 20px;
+        }
+    }
 </style>

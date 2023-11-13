@@ -24,6 +24,32 @@
         display: flex;
         gap: 50px;
     }
+    @media (max-width: 1100px){
+        .day-cards-container{
+            flex-wrap: wrap;
+            justify-content: center;
+
+            width: 100%;
+        }
+    }
+    @media (max-width: 820px){
+        .day-cards-container{
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+    }
+    @media (max-width: 500px){
+        .day-cards-container{
+            gap: 20px;
+        }
+    }
+    @media (max-width: 440px){
+        .day-cards-container{
+            align-items: stretch;
+        }
+    }
+
 
     .lds-ring {
         display: inline-block;
