@@ -1,16 +1,17 @@
 <script>
     import DayCard from "./DayCard.svelte";
-    import { appState_store } from "./store";
+    import { appState_store, weatherData_store } from "./store";
 
     $: appState = $appState_store;
+    $: weatherData = $weatherData_store;
 </script>
 
 
 {#if appState === "success"}
     <div class="day-cards-container">
-        <DayCard isOpen={ false }/>
-        <DayCard isOpen={ false }/>
-        <DayCard isOpen={ false }/>
+        {#each weatherData as dayData }
+            <DayCard dayData={ dayData } isOpen={ false }/>
+        {/each}
     </div>
 {:else if appState === "loading"}
     <div class="lds-ring"><div></div><div></div><div></div><div></div></div>

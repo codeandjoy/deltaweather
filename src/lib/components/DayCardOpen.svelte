@@ -2,7 +2,7 @@
     import '@fontsource/poppins'
     import '@fontsource/lato'
 
-    // export let dayData;
+    export let dayData;
 </script>
 
 

@@ -1,38 +1,40 @@
 <script>
-    // export let dayData;
+    export let dayData;
+    console.log(dayData);
 </script>
 
 
-
 <div class="day-card">
-    <div class="day-card-art"></div>
+    <div class="day-card-art" style="background-image: url('/icons/weather_icons/{ dayData.wmo[4].icon.day }_white.svg');"></div>
 
     <div class="day-card-content-container">
         <div class="weather-img-container">
-            <div class="weather-img"></div>
-            <div class="weather-desc"><span>Sun</span></div>
+            <div class="weather-img" style="background-image: url('/icons/weather_icons/{ dayData.wmo[4].icon.day }.svg');"></div>
+            <div class="weather-desc" style="color: { dayData.wmo[4].color.day }">
+                <span>{ dayData.wmo[4].name }</span>
+            </div>
         </div>
         
         <div class="date-container">
-            <span class="card-day">Mon</span>
-            <span class="card-date">03-12-2023</span>
+            <span class="card-day">{ dayData.time[4].weekday }</span>
+            <span class="card-date">{ dayData.time[4].date }</span>
         </div>
         <div class="weather-temp">
-            <span class="temp-value">2</span>
+            <span class="temp-value">{ dayData.temperature[4] }</span>
             <span class="temp-unit">°C</span>
         </div>
         <div class="weather-extra-data-container">
             <div class="extra-data">
                 <div class="extra-data--icon extra-data--icon-wind"></div>
-                <div class="extra-data--value">3.1 km/h</div>
+                <div class="extra-data--value">{ dayData.wind[4] } km/h</div>
             </div>
             <div class="extra-data">
                 <div class="extra-data--icon extra-data--icon-humidity"></div>
-                <div class="extra-data--value">40%</div>
+                <div class="extra-data--value">{ dayData.humidity[4] } %</div>
             </div>
             <div class="extra-data">
                 <div class="extra-data--icon extra-data--icon-pressure"></div>
-                <div class="extra-data--value">1000 mb</div>
+                <div class="extra-data--value">{ dayData.pressure[4] } mb</div>
             </div>
         </div>
     </div>
@@ -108,8 +110,6 @@
     
                     font-size: 50px;
                     font-weight: bold;
-    
-                    color: #FFD23F;
                 }
             }
     

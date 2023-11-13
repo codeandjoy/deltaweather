@@ -1,17 +1,18 @@
 <script>
+    export let dayData;
+    export let isOpen;
+
     import DayCardClosed from "./DayCardClosed.svelte";
     import DayCardOpen from "./DayCardOpen.svelte";
     import FullPageFade from "./FullPageFade.svelte";
 
-    export let isOpen;
-    // export let dayData;
 </script>
 
 
 
 {#if isOpen}
-    <DayCardOpen/>
+    <DayCardOpen dayData={ dayData }/>
     <FullPageFade/>
 {:else}
-    <DayCardClosed/>
+    <DayCardClosed dayData={ dayData }/>
 {/if}
