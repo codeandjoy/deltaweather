@@ -29,6 +29,8 @@
             flex-wrap: wrap;
             justify-content: center;
 
+            padding-bottom: 50px;
+
             width: 100%;
         }
     }
@@ -42,6 +44,8 @@
     @media (max-width: 500px){
         .day-cards-container{
             gap: 20px;
+
+            padding-bottom: 20px;
         }
     }
     @media (max-width: 440px){

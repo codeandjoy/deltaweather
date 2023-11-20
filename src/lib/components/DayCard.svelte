@@ -7,6 +7,8 @@
     import FullPageFade from "./FullPageFade.svelte";
 
     let isOpen = false;
+
+    $: anyCardOpen = $anyCardOpen_store;
 </script>
 
 
@@ -18,7 +20,7 @@
     <button class="wrapper-button" on:click={() => {isOpen = false ; $anyCardOpen_store = false}}>
         <FullPageFade/>
     </button>
-{:else}
+{:else if !anyCardOpen}
     <button class="wrapper-button" on:click={() => {isOpen = true ; $anyCardOpen_store = true}}>
         <DayCardClosed dayData={ dayData }/>
     </button>

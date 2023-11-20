@@ -214,4 +214,68 @@
             }
         }
     }
+    @media (max-width: 1300px){
+        .day-card-open{
+            display: flex;
+            flex-direction: column;
+            align-items: center;    
+            justify-content: center;
+
+            width: 100%;
+            height: 100vh;
+
+            padding: 0;
+
+            border-radius: 0;
+
+            .day-card-open--header{
+                width: 100%;
+                .daydate{
+                    width: 100%;
+                }
+            }
+
+            .day-card-open--data{
+                margin: 0 50px;
+
+                overflow-x: scroll;
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+            .day-card-open--data::-webkit-scrollbar{
+                display: none;
+            }
+        }
+    }
+    @media (max-width: 1150px){
+        .day-card-open{
+            .day-card-open--data{
+                width: 90%;
+            }
+        }
+    }
+    @media (max-width: 500px){
+        .day-card-open{
+            .day-card-open--header{
+                .location{
+                    .city{
+                        overflow: hidden;
+                        span{
+                            font-size: 120px;
+                        }
+                    }
+                    .daydate{
+                        margin-bottom: -47px;
+
+                        .day{
+                            font-size: 40px;
+                        }
+                        .date{
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 </style>   
