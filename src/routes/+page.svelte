@@ -10,7 +10,7 @@
 
 
 <svelte:head>
-    <title>Test</title>
+    <title>DeltaWeather</title>
 </svelte:head>
 
 <div class="delta-weather-container">
