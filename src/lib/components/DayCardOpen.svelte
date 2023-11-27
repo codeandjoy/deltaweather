@@ -27,7 +27,7 @@
         {#each { length: 8 } as _, i}
             <div class="data-col">
                 <div class="weather-icon-container">
-                    <div class="weather-icon" style="background-image: url('/icons/weather_icons/{dayData.wmo[i].icon}.svg');"></div>
+                    <div class="weather-icon" style="background-image: url('/public/icons/weather_icons/{dayData.wmo[i].icon}.svg');"></div>
                     <div class="weather-desc" style="color: { dayData.wmo[i].color }">{ dayData.wmo[i].name }</div>
                 </div>
                 <div class="time"><span>{ dayData.time[i].time }</span></div>
@@ -127,9 +127,9 @@
                         height: 24px;
                     }
     
-                    .icon-wind{ background-image: url('/icons/wind.svg'); }
-                    .icon-humidity{ background-image: url('/icons/humidity.svg'); }
-                    .icon-pressure{ background-image: url('/icons/pressure.svg'); }
+                    .icon-wind{ background-image: url('/public/icons/wind.svg'); }
+                    .icon-humidity{ background-image: url('/public/icons/humidity.svg'); }
+                    .icon-pressure{ background-image: url('/public/icons/pressure.svg'); }
                 }
             }
             .data-col:not(:last-child){
@@ -153,7 +153,7 @@
                         width: 100px;
                         height: 100px;
     
-                        background-image: url('/icons/weather_icons/sun.svg');
+                        background-image: url('/public/icons/weather_icons/sun.svg');
                         background-size: contain;
                         background-position: center;
                         background-repeat: no-repeat;

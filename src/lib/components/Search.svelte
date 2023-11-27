@@ -62,7 +62,7 @@
             width: 50px;
             height: 50px;
     
-            background-image: url('/icons/search_grey.svg');
+            background-image: url('/public/icons/search_grey.svg');
             background-size: contain;
     
             background-color: transparent;
@@ -77,7 +77,7 @@
         }
 
         .search-btn{
-            background-image: url('/icons/search.svg');
+            background-image: url('/public/icons/search.svg');
         }
     }
     @media (max-width: 1100px){

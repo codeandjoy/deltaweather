@@ -4,11 +4,11 @@
 
 
 <div class="day-card">
-    <div class="day-card-art" style="background-image: url('/icons/weather_icons/{ dayData.wmo[4].icon }_white.svg');"></div>
+    <div class="day-card-art" style="background-image: url('/public/icons/weather_icons/{ dayData.wmo[4].icon }_white.svg');"></div>
 
     <div class="day-card-content-container">
         <div class="weather-img-container">
-            <div class="weather-img" style="background-image: url('/icons/weather_icons/{ dayData.wmo[4].icon  }.svg');"></div>
+            <div class="weather-img" style="background-image: url('/public/icons/weather_icons/{ dayData.wmo[4].icon  }.svg');"></div>
             <div class="weather-desc" style="color: { dayData.wmo[4].color  }">
                 <span>{ dayData.wmo[4].name }</span>
             </div>
@@ -66,7 +66,7 @@
             width: 400px;
             height: 400px;
 
-            background-image: url('/icons/weather_icons/sun_white.svg');
+            background-image: url('/public/icons/weather_icons/sun_white.svg');
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
@@ -94,7 +94,7 @@
                     width: 200px;
                     height: 200px;
                 
-                    background-image: url('/icons/weather_icons/sun.svg');
+                    background-image: url('/public/icons/weather_icons/sun.svg');
                     background-position: center;
                     background-size: contain;
                     background-repeat: no-repeat;
@@ -188,9 +188,9 @@
                         font-weight: normal;
                     }
     
-                    .extra-data--icon-wind{ background-image: url('/icons/wind.svg'); }
-                    .extra-data--icon-humidity{ background-image: url('/icons/humidity.svg'); }
-                    .extra-data--icon-pressure{ background-image: url('/icons/pressure.svg'); }
+                    .extra-data--icon-wind{ background-image: url('/public/icons/wind.svg'); }
+                    .extra-data--icon-humidity{ background-image: url('/public/icons/humidity.svg'); }
+                    .extra-data--icon-pressure{ background-image: url('/public/icons/pressure.svg'); }
                 }
             }
         }
